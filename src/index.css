@@ -1,13 +1,259 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html {
+    font-family: 'Nunito', sans-serif;
+    font-size: 22px;
+    color: #ffd52d;
+}
+
+body {
+    min-height: 100vh;
+    background-color: #140f1d;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; 
+  padding: 1rem 0.5rem;
+}
+
+section {
+    width: 100%;
+    max-width: 420px;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 1rem;
+    background-color: rgba(0,0,0,0.4);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    flex-grow: 1;
+    padding-bottom: 1rem;
+}
+
+a, a:visited {
+    color: #fff;
+}
+
+.textInput,
+input[type="password"],
+input[type="email"],
+button,
+textarea {
+  font-family: 'Nunito', sans-serif;
+  font-size: 22px;
+  padding: 0.25rem;
+}
+
+input[type="text"]{
+    font-family: 'Nunito',sans-serif;
+    padding:0.25rem;
+}
+
+label,
+button {
+  margin-top: 1rem;
+  font-weight: bold;
+  cursor:pointer;
+  border-radius:10px;
+  border:none;
+}
+
+button {
+  padding: 0.5rem;
+  background: #fbefb7;
+}
+
+
+/*Register*/
+.instructions {
+    font-size: 0.75rem;
+    border-radius: 0.5rem;
+    background: #140f1d;
+    color: #fff;
+    padding: 0.25rem;
+    position: relative;
+    bottom: -10px;
+}
+
+.editForm, .register{
+    background: #f77f00;
+    border-radius:10px;
+    backdrop-filter: blur(10px);
+    padding: 50px 35px;
+    border:none;
+}
+
+.editForm label, h1{
+    color: #fff;
+}
+
+.inputArea{
+    border:none;
+    border-radius: 10px;
+    background: #fbefb7;
+}
+
+.inputArea:focus {
+    outline:none;
+}
+
+.ListLink{
+    height: 30px;
+    width: 30px;
+}
+
+.instructions > svg {
+    margin-right: 0.25rem;
+}
+
+.offscreen {
+    position: absolute;
+    left: -9999px;
+}
+
+.hide {
+    display: none;
+}
+
+.valid {
+    color: limegreen;
+    margin-left: 0.25rem;
+}
+
+.invalid {
+    color: red;
+    margin-left: 0.25rem;
+}
+
+.errmsg {
+    background-color: lightpink;
+    color: firebrick;
+    font-weight: bold;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/*student List*/
+.IconButton{
+    margin: 0.2rem;
+    color: #f77f00;
+}
+
+/*search bar*/
+.box{
+    display:flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    margin-bottom:1rem;
+}
+
+.search{
+    width: 80px;
+    height: 80px;
+    background: none;
+    border: 4px solid #ffd52d;
+    border-radius: 50px;
+    box-sizing: border-box;
+    color: #ffd52d;
+    outline: none;
+    transition: .5s;
+    font-size: 0px;
+}
+
+.box:focus-within .search{
+    width: 350px;
+    background: #272133;
+    border-radius: 10px;
+    font-size:22px;
+}
+
+i{
+    position: relative;
+    top: 1.2rem;
+    right: 2.3rem;
+    font-size: 26px;
+    color: #ffd52d;
+    transition: .2s;
+}
+
+/*table design*/
+
+.st-list{
+    width:100%;
+}
+
+.container{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+li {
+    border-radius: 10px;
+    padding: 10px 15px;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5px;
+}
+
+.tableHeader{
+    background-color: #f77f00;
+    font-weight: bold;
+    color: black;
+    text-transform: uppercase;
+}
+  
+.tableRow {
+    background-color: #3e3434;
+    box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.7);
+}
+
+.col-1 {
+    flex-basis: 10%;
+}
+
+.col-2{
+    flex-basis: 10%;
+}
+
+.col-3{
+    flex-basis:10%;
+}
+
+.col-4{
+    flex-basis: 25%;
+}
+
+.col-5{
+    flex-basis: 25%;
+}
+
+.col-6{
+    flex-basis: 5%;
+}
+.col-7{
+    flex-basis: 10%;
+}
+
+.delete-button{
+    cursor:pointer;
+    background: none;
+}
+
+.back-to-registration{
+    margin-left:1rem;
 }
