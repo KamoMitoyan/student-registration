@@ -2,13 +2,25 @@ import React from "react";
 import {useState} from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserPen, faSearch, faTrash} from "@fortawesome/free-solid-svg-icons";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 
 const StudentList = () => {
 
 	const students = JSON.parse(localStorage.getItem("Students"));
-	const [search, setSearch] = useState("");
 	const [availableStudents, setAvailabeleStudents] = useState(students);
+	const [searchParams, setSearchParams] = useSearchParams();
+
+	const search = searchParams.get('name') || '';
+
+	const handleSearch = event => {
+		const name = event.target.value;
+
+		if(name){
+			setSearchParams({name});
+		}else{
+			setSearchParams({});
+		}
+	}
 
 	const removeStudent = (index) => {
 		students.splice(index,1);
@@ -31,7 +43,8 @@ const StudentList = () => {
 				<input 
 					className="search"
 					type="text" 
-					onChange={event => {setSearch(event.target.value)}}
+					defaultValue = {search}
+					onChange={handleSearch}
 				/>
 				<i><FontAwesomeIcon icon={faSearch}/></i>
 			</div>
